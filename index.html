@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CrosswordGame</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<script src="jquery.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+		<style>
+			@font-face{
+				font-family: 'Roboto';
+				src: url('Roboto-Regular.ttf');
+			}
+			
+			body{
+				font-family: Roboto;
+				padding-top: 50px;
+				padding-bottom: 70px;
+				user-select: none;
+			}
+			
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 2px;
+				height: 2px;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: white; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: black; 
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #555; 
+			}
+			
+			#appbar{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background-color: #2a797a;
+				color: white; 
+				z-index: 313;
+				-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+			}
+			.abitem{
+				padding: 20px;
+				display: inline-block;
+				
+			}
+			.noad{
+				text-align: center;
+			}
+			.noad button{
+				border: none; 
+				background-color: blue;
+				color: white;
+				padding: 10px;
+				border-radius: 5px;
+				margin: 5px;
+			}
+			#drawer{
+				background-color: #e6e6e6;
+				width: 512px;
+				max-width: 85%;
+				position: fixed;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				padding-top: 70px;
+				display: none;
+				overflow: auto;
+				-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+				box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+			}
+			
+			#crossword {
+				text-align:left;
+			}
+
+			.crossword {
+				border-collapse:collapse;
+				font-family:"Courier New", Courier, monospace;
+				margin-top:10px;
+				margin-bottom:10px;
+			}
+
+			.crossword td {
+				border:1px solid black;
+				padding:0;
+				margin:0;
+				vertical-align:middle;
+				padding:0;
+				text-align:center;
+				width:30px;
+				height:30px;
+			}
+			
+			.no-border{
+				background-color: black;
+			}
+
+			.crossword .no-border {
+				border:none;
+			}
+
+			#clues {
+				font-size: 12px;
+				margin: 0 auto;
+			}
+
+			#clues td {
+				vertical-align:top;
+				margin: 0 auto;
+				text-align: left;
+			}
+			
+			.canswer{
+				display: none;
+			}
+			button{
+				box-sizing: border-box;
+				width: 100%;
+				padding: 20px;
+				border: none;
+				outline: none;
+				background-color: #2a797a;
+				color: white;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+			#vkeyboard{
+				position:fixed;
+				top: 10%;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(256,256,256,.85);
+				text-align: center;
+				display: none;
+				padding: 10px;
+				z-index: 13;
+			}
+			.kbtn{
+				padding: 10px;
+				border: 1px solid black;
+				margin: 5px; 
+				display: inline-block;
+				width: 30px;
+
+				background-color: #0a0a0a;
+  border-color: transparent;
+  color: white;
+				
+			}
+			th{
+				text-align: left;
+				font-weight: bold;
+			}
+			ul,li { list-style-type: none;
+			list-style-position:inside;
+			margin:0;
+			margin-right: 5px;
+			padding:0; }
+			
+			#game{
+				margin-bottom: 10px;
+				padding: 10px;
+				display: none;
+			}
+			
+			.ditem{
+				padding: 10px;
+				border-bottom: 1px solid black;
+				margin-bottom: 3px;
+			}
+		</style>
+		<script src="crossword.js"></script>
+		<script src="ttss.js"></script>
+		<script>
+		
+			var appdata = {
+				maincolor : "2a797a",
+				qcount : 5,
+			}
+			
+			if(localStorage.getItem("ttsasyik") === null){
+				saveData()
+			}else{
+				appdata = JSON.parse(localStorage.getItem("ttsasyik"));
+			}
+			
+			function saveData(){
+				localStorage.setItem("ttsasyik", JSON.stringify(appdata))
+			}	
+			
+			function startttsgame(){
+		
+				// words[i] correlates to clues[i]
+				var words = [];
+				var clues = [];
+				
+				for(var i = 0; i < appdata.qcount; i++){
+					var rn = genrandom(ttss.length-1)
+					var q = ttss[rn]
+					words.push(q.word)
+					clues.push(q.clue)
+					ttss.splice(rn,1)
+				}
+				
+				function genrandom(maxnum){
+					return Math.floor(Math.random() * maxnum)
+				}
+
+				// Create crossword object with the words and clues
+				var cw = new Crossword(words, clues);
+
+				// create the crossword grid (try to make it have a 1:1 width to height ratio in 10 tries)
+				var tries = 10; 
+				var grid = cw.getSquareGrid(tries);
+
+				// report a problem with the words in the crossword
+				if(grid == null){
+					var bad_words = cw.getBadWords();
+					var str = [];
+					for(var i = 0; i < bad_words.length; i++){
+						str.push(bad_words[i].word);
+					}
+					//alert("Shoot! A grid could not be created with these words:\n" + str.join("\n"));
+					location.reload()
+					return;
+				}
+
+				// turn the crossword grid into HTML
+				var show_answers = true;
+				document.getElementById("crossword").innerHTML = CrosswordUtils.toHtml(grid, show_answers);
+
+				// make a nice legend for the clues
+				var legend = cw.getLegend(grid);
+				addLegendToPage(legend);
+
+				function addLegendToPage(groups){
+					for(var k in groups){
+						var html = [];
+						for(var i = 0; i < groups[k].length; i++){
+							html.push("<li><strong>" + groups[k][i]['position'] + ".</strong> " + groups[k][i]['clue'] + "</li>");
+						}
+						document.getElementById(k).innerHTML = html.join("\n");
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="appbar">
+
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+			  <a class="navbar-item" href="index.html">
+				<img src="imgs/logo.png" width="40" height="20">
+			  </a>
+		  
+			  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			  </a>
+			</div>
+		  
+			<div id="navbarBasicExample" class="navbar-menu">
+			  <div class="navbar-start">
+		  
+				<div class="navbar-item has-dropdown is-hoverable">
+				  <a class="navbar-link">
+					Dificultad
+				  </a>
+		  
+				  <div class="navbar-dropdown">
+					<a class="navbar-item " onclick="setqcount(3)">
+					  Crucigrama de 3 palabras
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item" onclick="setqcount(5)">
+					  Crucigrama de 5 palabras
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item" onclick="setqcount(10)">
+					  Crucigrama de 10 palabras
+					</a>
+					<hr class="navbar-divider">
+				  </div>
+				</div>
+			  </div>
+		  
+			  <div class="navbar-end">
+				<div class="navbar-item">
+				  <div class="buttons">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </nav>
+		
+		</div>
+		<div class="screen" id="game">
+			
+
+			<div class="columns">
+				<div class="column is-half is-offset-one-quarter">
+				<br>
+					<div id="crossword"></div>
+
+				</div>	
+			</div>
+			
+
+			<table id="clues">
+				<thead>
+					<tr>
+						<th>Horizontal</th>
+						<th>Vertical</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><ul id="across"></ul></td>
+						<td><ul id="down"></ul></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br><br><br>
+			<div class="columns">
+				<div class="column is-3 is-offset-3">
+					<button class="button is-large is-danger " onclick="toggleAnswer()"> Mostrar respuestas</button>
+				</div>	
+				<div class="column is-3">
+					<button class="button is-large is-warning " onclick="myFunction()"> Pista aleatoria </button>
+				</div>	
+							
+
+			</div>
+			<div id="vkeyboard">
+				<div class="columns">
+				<div class="column is-3 is-offset-4" id="kbtnlist">
+				<button class="button is-small is-danger "onclick="$('#vkeyboard').hide()"><i class="fa fa-times"></i> Close</button>
+			</div>	
+			</div>
+				</div>
+		</div>
+		
+
+
+		
+		<script>
+			
+			function setqcount(n){
+				appdata.qcount = n
+				saveData()
+				location.reload()
+			}
+			
+			function resetsettings(){
+				localStorage.clear()
+				location.reload()
+			}
+			
+			function tsep(x){
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			
+			function vtext(text){
+				var letters = /^[A-Za-z0-9]+$/;
+				if(text.match(letters)) return true;
+				else return false;
+			}
+			function toggledrawer(){
+				$("#drawer").toggle()
+			}
+			
+		</script>
+		
+		<script>
+
+			function myFunction() {
+				// Returns a random integer from 0 to 10:
+				var opc=Math.floor(Math.random() * 10)+ 1;
+				var msg;
+				switch(opc)
+				{
+					case 1: msg="ieee dice que la calidad de software es cuando el software satisface las expectativas del usuario"
+					break;
+					case 2: msg="verificacion es cuando se comprueba que el software funciona";
+					break;
+					case 3: msg="la calidad esta centrada en el proceso y tambien depende de la cantidad que el cliente este dispuesto a pagar";
+					break;
+					case 4: msg="estetica esta relacionada a la apariencia";
+					break;
+					case 5: msg="industrializacion fue donde se reemplazo cierto trabajo";
+					break;
+					case 6: msg="Aseguramiento es un proceso";
+					break;
+					case 7: msg="producto se centra en algo";
+					break;
+					case 8: msg="trascendental es una idea o un pensamiento";
+					break;
+					case 9: msg="un tipo de calidad es planificada";
+					break;
+					case 10: msg="toyota es una compañia japonesa";
+					break;
+				}
+
+			alert(msg);
+			}
+
+			var canswershown = false;
+			function toggleAnswer(){
+				if(canswershown){
+					$(".canswer").hide()
+					$(".uanswer").show()
+					canswershown = false
+				}else{
+					$(".canswer").show()
+					$(".uanswer").hide()
+					canswershown = true
+				}
+
+			}
+			function activatetts(){
+				$("td").click(function(){
+					if($(this).find(".canswer").html() != "&nbsp;" && $(this).find(".canswer").html() != undefined){
+						console.log("Clicked: " + $(this).find(".canswer").html())
+						console.log($(this).find(".uanswer").attr('id'))
+						selectedua = $(this).find(".uanswer").attr('id')
+						$("#vkeyboard").show()
+					}
+				})
+			}
+				
+			var selectedua = -1
+			function typechar(c){
+				$("#"+selectedua).html(c)
+				$("#vkeyboard").hide()
+			}
+			
+			function initvkeyboard(){
+				var chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
+				for(var i = 0; i < chars.length; i++){
+					$("#kbtnlist").append("<button class='kbtn is-black' onclick=typechar('"+chars[i]+"')>"+chars[i]+"</button>")
+					
+				}
+			}
+			
+			
+			setTimeout(function(){
+				startttsgame()
+				activatetts()
+				initvkeyboard()
+				$("#crossword").css({ "width" : ($("tbody:eq(0)").find("tr:eq(0)").find("td").length * 32) + "px" })
+				$("#game").show()
+			},500)
+			
+		</script>
+		
+	</body>
+</html>
