@@ -184,7 +184,7 @@
 			}
 		</style>
 		<script src="crossword.js"></script>
-		<script src="ttss1.js"></script>
+		<script src="ttss.js"></script>
 		<script>
 		
 			var appdata = {
@@ -209,11 +209,11 @@
 				var clues = [];
 				
 				for(var i = 0; i < appdata.qcount; i++){
-					var rn = genrandom(ttss1.length-1)
-					var q = ttss1[rn]
+					var rn = genrandom(ttss.length-1)
+					var q = ttss[rn]
 					words.push(q.word)
 					clues.push(q.clue)
-					ttss1.splice(rn,1)
+					ttss.splice(rn,1)
 				}
 				
 				function genrandom(maxnum){
