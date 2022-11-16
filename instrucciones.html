@@ -278,7 +278,7 @@
 			<div id="navbarBasicExample" class="navbar-menu">
 			  <div class="navbar-start">
 		  
-				
+
 				<div class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
 					  Modulos
@@ -295,34 +295,33 @@
 					  <hr class="navbar-divider">
 					</div>
 				  </div>
-				  <div class="navbar-item has-dropdown is-hoverable">
-					<a class="navbar-link">
-					  Dificultad
-					</a>
-			
-					<div class="navbar-dropdown">
-					  <a class="navbar-item " onclick="setqcount(3)">
-						Crucigrama de 3 palabras
-					  </a>
-					  <hr class="navbar-divider">
-					  <a class="navbar-item" onclick="setqcount(5)">
-						Crucigrama de 5 palabras
-					  </a>
-					  <hr class="navbar-divider">
-					  <a class="navbar-item" onclick="setqcount(10)">
-						Crucigrama de 10 palabras
-					  </a>
-					  <hr class="navbar-divider">
-					  <a class="navbar-item" onclick="setqcount(15)">
-						Crucigrama de 15 palabras
-					  </a>
-					  <hr class="navbar-divider">
-					</div>
-				  </div>
-					<a class="navbar-item is-hoverable" href="instrucciones.html">
-					  Instrucciones
-					</a>
-
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                      Dificultad
+                    </a>
+            
+                    <div class="navbar-dropdown">
+                      <a class="navbar-item " onclick="setqcount(3)">
+                        Crucigrama de 3 palabras
+                      </a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item" onclick="setqcount(5)">
+                        Crucigrama de 5 palabras
+                      </a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item" onclick="setqcount(10)">
+                        Crucigrama de 10 palabras
+                      </a>
+                      <hr class="navbar-divider">
+                      <a class="navbar-item" onclick="setqcount(15)">
+                        Crucigrama de 15 palabras
+                      </a>
+                      <hr class="navbar-divider">
+                    </div>
+                  </div>
+                  <a class="navbar-item is-hoverable" href="instrucciones.html">
+                    Instrucciones
+                  </a>
 			  </div>
 		  
 			  <div class="navbar-end">
@@ -335,165 +334,100 @@
 		  </nav>
 		
 		</div>
-		<div class="screen" id="game">
-			
-
-			<div class="columns">
-				<div class="column is-half is-offset-one-quarter">
-				<br>
-					<div id="crossword"></div>
-
-				</div>	
-			</div>
-			
-
-			<table id="clues">
-				<thead>
-					<tr>
-						<th>Horizontal</th>
-						<th>Vertical</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><ul id="across"></ul></td>
-						<td><ul id="down"></ul></td>
-					</tr>
-				</tbody>
-			</table>
-
-			<br><br><br>
-			<div class="columns">
-				<div class="column is-3 is-offset-3">
-					<button class="button is-large is-danger " onclick="toggleAnswer()"> Mostrar respuestas</button>
-				</div>	
-				<div class="column is-3">
-					<button class="button is-large is-warning " onclick="myFunction()"> Pista aleatoria </button>
-				</div>	
-							
-
-			</div>
-			<div id="vkeyboard">
-				<div class="columns">
-				<div class="column is-3 is-offset-4" id="kbtnlist">
-				<button class="button is-small is-danger "onclick="$('#vkeyboard').hide()"><i class="fa fa-times"></i> Close</button>
-			</div>	
-			</div>
-				</div>
-		</div>
 		
+        <br><br><br><br>
+        <div class="columns" style="padding: 5%;">
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="imgs/inst1.jpg" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Paso 1</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Escoge el modulo para elegir que temas se presentaran en el crucigrama.
+                        
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="imgs/inst2.jpg" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Paso 2</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Escoge la dificultad del crucigrama
+                        
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="imgs/inst3.jpg" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Paso 3</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Haz click en el recuadro del crucigrama que quieras llenar e inserta la letra que creas correcta
+                        
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="imgs/inst4.jpeg" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Paso 4</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Si deseas revisar que tus respuestas sean las correctas hac click en el boton de mostrar respuestas
+                        
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          
+          
 
-
-		
-		<script>
-			
-			function setqcount(n){
-				appdata.qcount = n
-				saveData()
-				location.reload()
-			}
-			
-			function resetsettings(){
-				localStorage.clear()
-				location.reload()
-			}
-			
-			function tsep(x){
-				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}
-			
-			function vtext(text){
-				var letters = /^[A-Za-z0-9]+$/;
-				if(text.match(letters)) return true;
-				else return false;
-			}
-			function toggledrawer(){
-				$("#drawer").toggle()
-			}
-			
-		</script>
-		
-		<script>
-
-			function myFunction() {
-				// Returns a random integer from 0 to 10:
-				var opc=Math.floor(Math.random() * 10)+ 1;
-				var msg;
-				switch(opc)
-				{
-					case 1: msg="ieee dice que la calidad de software es cuando el software satisface las expectativas del usuario"
-					break;
-					case 2: msg="verificacion es cuando se comprueba que el software funciona";
-					break;
-					case 3: msg="la calidad esta centrada en el proceso y tambien depende de la cantidad que el cliente este dispuesto a pagar";
-					break;
-					case 4: msg="estetica esta relacionada a la apariencia";
-					break;
-					case 5: msg="industrializacion fue donde se reemplazo cierto trabajo";
-					break;
-					case 6: msg="Aseguramiento es un proceso";
-					break;
-					case 7: msg="producto se centra en algo";
-					break;
-					case 8: msg="trascendental es una idea o un pensamiento";
-					break;
-					case 9: msg="un tipo de calidad es planificada";
-					break;
-					case 10: msg="toyota es una compañia japonesa";
-					break;
-				}
-
-			alert(msg);
-			}
-
-			var canswershown = false;
-			function toggleAnswer(){
-				if(canswershown){
-					$(".canswer").hide()
-					$(".uanswer").show()
-					canswershown = false
-				}else{
-					$(".canswer").show()
-					$(".uanswer").hide()
-					canswershown = true
-				}
-
-			}
-			function activatetts(){
-				$("td").click(function(){
-					if($(this).find(".canswer").html() != "&nbsp;" && $(this).find(".canswer").html() != undefined){
-						console.log("Clicked: " + $(this).find(".canswer").html())
-						console.log($(this).find(".uanswer").attr('id'))
-						selectedua = $(this).find(".uanswer").attr('id')
-						$("#vkeyboard").show()
-					}
-				})
-			}
-				
-			var selectedua = -1
-			function typechar(c){
-				$("#"+selectedua).html(c)
-				$("#vkeyboard").hide()
-			}
-			
-			function initvkeyboard(){
-				var chars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
-				for(var i = 0; i < chars.length; i++){
-					$("#kbtnlist").append("<button class='kbtn is-black' onclick=typechar('"+chars[i]+"')>"+chars[i]+"</button>")
-					
-				}
-			}
-			
-			
-			setTimeout(function(){
-				startttsgame()
-				activatetts()
-				initvkeyboard()
-				$("#crossword").css({ "width" : ($("tbody:eq(0)").find("tr:eq(0)").find("td").length * 32) + "px" })
-				$("#game").show()
-			},500)
-			
-		</script>
-		
 	</body>
 </html>
