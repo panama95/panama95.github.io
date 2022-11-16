@@ -1,82 +1,163 @@
 var ttss = [
 	{	//1
-		"word":"ieee",
-		"clue":"Segun quien la calidad de software es cuando el software satisface las expectativas del usuario. "
+		"word":"Producto",
+		"clue":"Dan indicación cuantitativa de la cantidad de atributos de un  "
 	},
 	{	//2
-		"word":"validacion",
-		"clue":"Comprueba que las funcionalidades operan como el cliente espera "
+		"word":"Código",
+		"clue":"Un ejemplo de medida de Software es la cantidad de líneas de  "
 	},
 	{	//3
-		"word":"verificacion",
-		"clue":"Comprueba que el software funciona "
+		"word":"Calidad",
+		"clue":"Una métrica de la clasificación del software es: "
 	},
 	{	//4
-		"word":"garantia",
-		"clue":"Son un conjunto de acciones planificadas y sistemáticas "
+		"word":"Competencia",
+		"clue":"Intenta valorar actividades de productividad de los programadores "
 	},
 	{	//5
-		"word":"calidad",
-		"clue":"Esta centrada en el proceso y tambien depende de la cantidad que el cliente este dispuesto a pagar "
+		"word":"Desempeño",
+		"clue":"Mide la conducta de módulos y sistema de un software "
 	},
 	{	//6
-		"word":"fiabilidad",
-		"clue":"Involucra que la probabilidad de que un producto no falle en un periodo de tiempo determinado "
+		"word":"Volumen",
+		"clue":"Una Métrica de complejidad define "
 	},
 	{	//7
-		"word":"estetica",
-		"clue":"Se mantiene subjetiva y relacionada a la apariencia del software. "
+		"word":"Medición",
+		"clue":"Métrica o combinación que proporciona una visión de un proceso de software es un indicador de  "
 	},
 	{	//8
-		"word":"percibida",
-		"clue":"Calidad que depende de la subjetividad del cliente "
+		"word":"Indicador",
+		"clue":"La tasa de defectos es un  "
 	},
 	{	//9
-		"word":"industrializacion",
-		"clue":"Revolucion donde el trabajo manual fue remplazado por el trabajo mecanico. "
+		"word":"Cuatro",
+		"clue":"Cantidad de atributos de métrica de software "
 	},
 	{	//10
-		"word":"estrategias",
-		"clue":"Evolucion historica donde los sistemas de gestion se consolidan y la implementacion del personal aumenta. "
+		"word":"Nominal",
+		"clue":"Como pueden ser las escalas de los atributos métricos "
 	},
 	{	//11
-		"word":"Introducir los cambios y documentacion es un proceso de ____",
-		"clue":"Esta centrada en el proceso y tambien depende de la cantidad que el cliente este dispuesto a pagar "
+		"word":"Entidad",
+		"clue":"Puede ser un objeto físico "
 	},
 	{	//12
-		"word":"fabricante",
-		"clue":"Se examina durante la produccion y despues de la entrega  "
+		"word":"Producto",
+		"clue":"Donde se incluyen las mediciones relacionadas a actividades "
 	},
 	{	//13
-		"word":"producto",
-		"clue":"Se centra en la medida de los atributos de la produccion "
+		"word":"Entidad",
+		"clue":"Tamaño de código es ejemplo de: "
 	},
 	{	//14
-		"word":"usuario",
-		"clue":"La calidad es adecuada al proposito  "
+		"word":"Cuantificar",
+		"clue":"Entre dos valores se puede "
 	},
 	{	//15
-		"word":"trascendental",
-		"clue":"Es la idea al que se intenta llegar, aunque no es conseguido debido a deficiencias en la tecnologia"
+		"word":"Ordenada",
+		"clue":"La escala de ratio puede ser "
 	},
 	{	//16
-		"word":"conformidad",
-		"clue":"Grado donde el diseño y las prestaciones del producto cumplen "
+		"word":"Indicadores",
+		"clue":"¿Qué es necesario asignar para aseguramos que un producto resulte de calidad? "
 	},
 	{	//17
-		"word":"planificada",
-		"clue":"Tipo de calidad que pretende obtener y esta formalizada en documentos de proyecto "
+		"word":"Gestión",
+		"clue":"¿La diferencia del desarrollo de software entre los años 60 y hoy en día es? "
 	},
 	{	//18
-		"word":"toyota",
-		"clue":"Compania Japonesa que reconocio un fallo de software en su modelo "
+		"word":"Rigurosas",
+		"clue":"¿Actualmente existe una clara tendencia hacia la obtención de medidas  ----  en el software?"
 	},
 	{	//19
-		"word":"integracion",
-		"clue":"Se espera que la inteligencia artificial mejore aun mas el proceso de: "
+		"word":"Indicadores",
+		"clue":"Las métricas comparan datos de desempeño con"
 	},
 	{	//20
-		"word":"esperada",
-		"clue":"La calidad que potencia con una adecuada obtencion de informacion  "
+		"word":"Anterior",
+		"clue":"Las métricas tienen valores cuantitativos con logros de calidad de año"
 	},
+	{	//21
+		"word":"Gestión",
+		"clue":"Que facilita el control la medición de la calidad"
+	},
+	{	//22
+		"word":"Correctiva",
+		"clue":"¿Evaluar la productividad de los recursos, es una acción? "
+	},
+	{	//23
+		"word":"Cultura",
+		"clue":"Algunas organizaciones no miden la calidad por ausencia de "
+	},
+	{	//24
+		"word":"Presupuesto",
+		"clue":"La métrica de calidad tiene un obstáculo, el cual puede ser:"
+	},
+	{	//25
+		"word":"Proyecto",
+		"clue":"Es una recopilación de datos del software"
+	},
+	{	//26
+		"word":"Evaluada",
+		"clue":"La evaluación de calidad requiere ser"
+	},
+	{	//27
+		"word":"Simples",
+		"clue":"¿Como pueden ser los objetivos de medición separados?"
+	},
+	{	//28
+		"word":"Prototipos",
+		"clue":"El control de calidad se logra mediante el uso de:"
+	},
+	{	//29
+		"word":"Proceso",
+		"clue":"Para mejorar el control de calidad se usa el:"
+	},
+	{	//30
+		"word":"Proyecto",
+		"clue":"El control de calidad se usa para aprobar un:"
+	},
+	{	//31
+		"word":"Calidad",
+		"clue":"La evaluación de calidad requiere juicios de  "
+	},
+	{	//32
+		"word":"Flujos",
+		"clue":"Un atributo de calidad interna son los grafos de control de  "
+	},
+	{	//33
+		"word":"Portabilidad",
+		"clue":"Un atributo de calidad externa son las métricas de"
+	},
+	{	//34
+		"word":"Calidad",
+		"clue":"Un proceso bien concebido e implementado generara la mayor cantidad de las veces producto de"
+	},
+	{	//35
+		"word":"Estratégicos",
+		"clue":"Las métricas del proceso de software se utilizan para propósitos  "
+	},
+	{	//36
+		"word":"tareas",
+		"clue":"La medición del proceso se realiza estudiando todas las  "
+	},
+	{	//37
+		"word":"Uno",
+		"clue":"Cuál es el valor inicial de EED "
+	},
+	{	//38
+		"word":"Medida",
+		"clue":"La Eficacia en la Eliminación de Defectos (EED) es una  "
+	},
+	{	//39
+		"word":"Formulación",
+		"clue":"Proceso de medición del producto "
+	},
+	{	//40
+		"word":"Descripción",
+		"clue":"Es una característica del recurso en la medición del producto "
+	},
+
 ]
