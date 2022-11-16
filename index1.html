@@ -262,77 +262,56 @@
 	<body>
 		<div id="appbar">
 
-			<nav class="navbar" role="navigation" aria-label="main navigation">
-				<div class="navbar-brand">
-				  <a class="navbar-item" href="index.html">
-					<img src="imgs/logo.png" width="40" height="20">
+		<nav class="navbar" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+			  <a class="navbar-item" href="index.html">
+				<img src="imgs/logo.png" width="40" height="20">
+			  </a>
+		  
+			  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			  </a>
+			</div>
+		  
+			<div id="navbarBasicExample" class="navbar-menu">
+			  <div class="navbar-start">
+		  
+				<div class="navbar-item has-dropdown is-hoverable">
+				  <a class="navbar-link">
+					Dificultad
 				  </a>
-			  
-				  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-					<span aria-hidden="true"></span>
-				  </a>
-				</div>
-			  
-				<div id="navbarBasicExample" class="navbar-menu">
-				  <div class="navbar-start">
-			  
-					<div class="navbar-item has-dropdown is-hoverable">
-					  <a class="navbar-link">
-						Dificultad
-					  </a>
-			  
-					  <div class="navbar-dropdown">
-						<a class="navbar-item " onclick="setqcount(3)">
-						  Crucigrama de 3 palabras
-						</a>
-						<hr class="navbar-divider">
-						<a class="navbar-item" onclick="setqcount(5)">
-						  Crucigrama de 5 palabras
-						</a>
-						<hr class="navbar-divider">
-						<a class="navbar-item" onclick="setqcount(10)">
-						  Crucigrama de 10 palabras
-						</a>
-						<hr class="navbar-divider">
-						<a class="navbar-item" onclick="setqcount(15)">
-						  Crucigrama de 15 palabras
-						</a>
-						<hr class="navbar-divider">
-					  </div>
-					</div>
-					<div class="navbar-item has-dropdown is-hoverable">
-						<a class="navbar-link">
-						  Modulos
-						</a>
-				
-						<div class="navbar-dropdown">
-							<a class="navbar-item" href="index.html">
-							Modulo 1
-						  </a>
-						  <hr class="navbar-divider">
-						  <a class="navbar-item" href="index1.html">
-							Modulo 2
-						  </a>
-						  <hr class="navbar-divider">
-						</div>
-					  </div>
-					  <div class="navbar-item is-hoverable">
-						<a class="navbar-link" href="instrucciones.html">
-						  Instrucciones
-						</a>
-					  </div>
-				  </div>
-			  
-				  <div class="navbar-end">
-					<div class="navbar-item">
-					  <div class="buttons">
-					  </div>
-					</div>
+		  
+				  <div class="navbar-dropdown">
+					<a class="navbar-item " onclick="setqcount(3)">
+					  Crucigrama de 3 palabras
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item" onclick="setqcount(5)">
+					  Crucigrama de 5 palabras
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item" onclick="setqcount(10)">
+					  Crucigrama de 10 palabras
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item" onclick="setqcount(15)">
+					  Crucigrama de 15 palabras
+					</a>
+					<hr class="navbar-divider">
 				  </div>
 				</div>
-			  </nav>
+			  </div>
+		  
+			  <div class="navbar-end">
+				<div class="navbar-item">
+				  <div class="buttons">
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </nav>
 		
 		</div>
 		<div class="screen" id="game">
